@@ -60,6 +60,8 @@ namespace dragonBones {
          * @version DragonBones 3.0
          */
         public skins: Map<SkinData> = {};
+        public aabb: AABB = new dragonBones.AABB();
+        public durings:Array<During> = [];
         /**
          * @language zh_CN
          * 所有的动画数据。
@@ -89,6 +91,7 @@ namespace dragonBones {
             this.cacheFrameRate = 0;
             this.type = ArmatureType.Armature;
             this.name = null;
+            this.aabb = null;
 
             for (let i in this.bones) {
                 this.bones[i].returnToPool();
@@ -227,6 +230,9 @@ namespace dragonBones {
             } else {
                 throw new Error();
             }
+        }
+        public addDuring(value: DuringData): void{
+            this.durings.push(value);
         }
         /**
          * @private

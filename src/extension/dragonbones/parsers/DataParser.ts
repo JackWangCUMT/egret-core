@@ -10,7 +10,7 @@ namespace dragonBones {
 
         protected static TEXTURE_ATLAS: string = "TextureAtlas";
         protected static SUB_TEXTURE: string = "SubTexture";
-        protected static FORMAT: string = "format";;
+        protected static FORMAT: string = "format";
         protected static IMAGE_PATH: string = "imagePath";
         protected static WIDTH: string = "width";
         protected static HEIGHT: string = "height";
@@ -30,6 +30,8 @@ namespace dragonBones {
         protected static ANIMATION: string = "animation";
         protected static FFD: string = "ffd";
         protected static FRAME: string = "frame";
+        protected static DURING: string = "during";
+        protected static AABB: string = "aabb";
 
         protected static PIVOT: string = "pivot";
         protected static TRANSFORM: string = "transform";

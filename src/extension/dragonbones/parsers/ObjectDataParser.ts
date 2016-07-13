@@ -127,6 +127,21 @@ namespace dragonBones {
                     armature.addAnimation(this._parseAnimation(animations[i]));
                 }
             }
+            
+            if(ObjectDataParser.DURING in rawData) {
+                const durings = <Array<any>>rawData[ObjectDataParser.DURING];
+                for (let i = 0, l = durings.length; i < l; ++i) {
+                    armature.addDuring(durings[i]);
+                }
+            }
+            if(ObjectDataParser.AABB in rawData) {
+                var aa:AABB = new AABB();
+                aa.x = rawData[ObjectDataParser.AABB].x;
+                aa.y = rawData[ObjectDataParser.AABB].y;
+                aa.width = rawData[ObjectDataParser.AABB].width;
+                aa.height = rawData[ObjectDataParser.AABB].height;
+                armature.aabb = aa;
+            }
 
             this._armature = null;
             this._rawBones.length = 0;
